@@ -1,0 +1,276 @@
+body {
+  background-color: #133C55;
+  /* background-color: #B9E6FF; */
+}
+
+.App {
+  text-align: center;
+}
+
+.PageContent {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.Projects {
+  max-width: 1100px;
+}
+
+.bl {
+  border-left: solid grey 1px;
+}
+
+.bb {
+  border-bottom: solid grey 1px;
+}
+
+.br {
+  border-right: solid grey 1px;
+}
+
+.bt {
+  border-top: solid grey 1px;
+}
+
+p {
+  color: white;
+}
+
+h1, h2 {
+  color: #aefefe;
+}
+
+h3, h4, h5, h6 {
+  color: #aaafff;
+}
+
+hr {
+  height: 3px;
+  background-color: #000;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.pb-6 {
+  padding-bottom: 9rem !important;
+}
+
+.Home {
+  overflow-x: hidden;
+}
+
+.center {
+  margin: auto;
+}
+
+.container-fluid{
+  padding: 0 15%;
+}
+
+.container-fluid-md{
+  padding: 0 10%;
+}
+
+@media (max-width: 440px){
+  .container-fluid{
+    padding: 0 8%;
+  }
+}
+
+@media (max-width: 360px){
+  .container-fluid{
+    padding: 0 5%;
+  }
+}
+
+@media (max-width: 340px) {
+  .container-fluid{
+    padding: 8px;
+  }
+}
+
+.Name {
+  font: 500 italic 30px/50px 'Ubuntu', sans-serif;
+  /* color: #283149; */
+  color: #ec2d2d;
+}
+
+.nav-item {
+  /* font: 500 'Ubuntu', sans-serif; */
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 18px;
+}
+
+.First {
+  margin-right: 20px;
+}
+
+.Header{
+  background-color: #171717;
+  /* background-color: #2e313f; */
+  /* background-color: #29335C; */
+}
+
+.PageTitle {
+  font: 500 italic 20px/30px 'Ubuntu',serif;
+  text-align: left;
+  color: #ee7575;
+}
+
+.ProjectName {
+  font-size: 28px;
+  font-weight: bold;
+  color: #aefefe;
+}
+
+.AboutMe {
+  width: 60%;
+  left: 20%;
+  position: relative;
+}
+
+.AboutDescription {
+  float: left;
+  width: 60%;
+  font-size: large;
+  text-align: left;
+}
+
+.AboutPicture {
+  float: right;
+}
+
+.KeyWord {
+  font-size: 120px;
+  font-family: 'Baloo 2', cursive;
+  color: #1357cc;
+  /* color: #4b7acc; */
+}
+
+.KeyWordContainer {
+  white-space: nowrap;
+  font-size: 18px;
+  color: #fff;
+}
+
+@media (max-width: 780px) {
+  .KeyWord {
+    font-size: 110px;
+  }
+}
+
+@media (max-width: 440px) {
+  .KeyWord {
+    font-size: 90px;
+  }
+}
+
+@media (max-width: 340px) {
+  .KeyWord {
+    font-size: 70px;
+  }
+}
+
+@media (max-width: 1100px) {
+  .AboutMe {
+    width: 70%;
+    left: 15%;
+  }
+}
+
+@media (max-width: 950px) {
+  .AboutMe {
+    width: 80%;
+    left: 10%;
+  }
+}
+
+@media (max-width: 800px) {
+  .AboutMe {
+    width: 90%;
+    left: 5%;
+  }
+
+  .AboutDescription {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  .AboutMe {
+    width: 90%;
+    left: 5%;
+  }
+
+  .AboutDescription {
+    float: none;
+    width: 100%;
+  }
+
+  .AboutPicture {
+    float: none;
+    margin-bottom: 20px;
+  }
+}
+
+@media (max-width: 280px) {
+  .AboutPicture {
+    display: none;
+  }
+}
+
+.Snek table {
+  padding-top: 4px;
+  border-spacing: 4px 0;
+}
+
+.Snek table.center {
+  margin-left: auto; 
+  margin-right: auto;
+}
+
+.Snek {
+  margin-bottom: 15px;
+  color: black;
+}
+
+.Snek:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.SnekInfo {
+  margin-left: 10px;
+  margin-right: 10px;
+  font-size: 130%;
+}
+
+.SnekMsg {
+  margin-left: 30px;
+  font-size: 130%;
+}
+
+.SnekInfoSection {
+  margin-bottom: 5px;
+}
+
+.TimeDescription {
+  width: 50%;
+  left: 25%;
+  position: relative;
+  text-align: left;
+}
+
+.TimeContainer {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: large;
+}
+
+.TimeLabel {
+  font-weight: bold;
+  margin-right: 10px;
+}

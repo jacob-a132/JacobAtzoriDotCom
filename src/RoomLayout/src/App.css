@@ -1,0 +1,119 @@
+.RoomLayout {
+  text-align: center;
+  color: black;
+}
+
+.RoomLayout .Center {
+  text-align: center;
+}
+
+.RoomLayout .colorChooser {
+  position: absolute;
+  top: 30px;
+  left: 30px;
+}
+
+.RoomLayout .editButton {
+  position: absolute;
+  top: -8px;
+  left: 38px;
+  z-index: 100;
+  font-size: 10px;
+  width: 20px;
+  height: 20px;
+  border-radius: 10px;
+}
+
+.RoomLayout .editButton:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.RoomLayout .closeButton {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.RoomLayout .bottomMiddle {
+  position: absolute;
+  bottom: 0;
+  right: 35%;
+}
+
+.RoomLayout .createObject {
+  position: fixed;
+  width: 450px;
+  height: 335px;
+  margin-left: 20%;
+  margin-top: 5%;
+  background-color: white;
+  border: solid 1px black;
+  z-index: 20;
+}
+
+.RoomLayout .CreateInputContainer {
+  width: 200px;
+  margin-left: auto;
+  margin-right: 40px;
+  text-align: right;
+}
+
+.RoomLayout .Radio {
+  text-align: left;
+  margin-left: 120px;
+}
+
+.RoomLayout .rotate {
+  transform: rotate(45deg);
+}
+
+.RoomLayout .object {
+  transform: rotate(45deg);
+  border: 1px solid black;
+  overflow: hidden;
+  position: absolute;
+}
+
+.RoomLayout .numBox, .RoomLayout .textBox {
+  width: 80px;
+  margin-right: 15px;
+}
+
+.RoomLayout .Label {
+  margin-right: 5px;
+  font-size: 22px;
+  padding-right: 10px;
+  padding-left: 10px;
+  /* color: white; */
+}
+
+/* .RoomLayout h2 {
+  color: white;
+}
+
+.RoomLayout .nav h2 {
+  color: initial;
+} */
+
+.RoomLayout .mainCanvas {
+  margin-top: 10px;
+}
+
+.RoomLayout .sidebar {
+  position: fixed;
+  width: 240px;
+  height: 100vh;
+  background: lightgray;
+}
+
+.RoomLayout .nav {
+  position: relative;
+  margin: 10% 10%;
+  font-weight: bold;
+}
+
+.RoomLayout .main {
+  width: calc(100% - 240px);;
+  float: right;
+}
