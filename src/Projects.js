@@ -107,6 +107,54 @@ class Projects extends Component {
           </div>
         </div>
 
+        <hr />
+
+        <div className="p-5">
+          <div className="container-fluid-md">
+            <div className="row justify-content-md-center">
+              <div className="col-md-6">
+                <Link to="/collision-detection">
+                  <img src="/collision-detection.png" width={300} alt="Collision Detection" />
+                </Link>
+              </div>
+              <div className="col-md-1" />
+              <div className="col-md-5 pb-3">
+                <p>
+                  <span className="ProjectName">2D Collision with Quadtree</span>
+                  <br />
+                  Efficient collision detection for 2D
+                </p>
+                <Link className="btn btn-dark btn-lg" to="/collision-detection">Check it out</Link>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* <hr />
+        
+        <div className="p-5">
+          <div className="container-fluid-md">
+            <div className="row justify-content-md-center">
+              <div className="col-md-5 pb-3">
+                <p>
+                  <span className="ProjectName">Pica Y Fijas</span>
+                  <br />
+                  The computer picks a secret code.
+                  <br/>
+                  You try to guess it, and you are told how many numbers you got right, and how many are in the right position.
+                </p>
+                <Link className="btn btn-dark btn-lg" to="/picas-y-fijas">Check it out</Link>
+              </div>
+              <div className="col-md-1" />
+              <div className="col-md-6">
+                <Link to="/picas-y-fijas">
+                  <img src="/picas-y-fijas.png" width={300} alt="Picas Y Fijas" />
+                </Link>
+              </div>
+            </div>
+          </div>
+        </div> */}
+
       </div>
     );
   }

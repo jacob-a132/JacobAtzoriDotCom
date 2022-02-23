@@ -1,11 +1,13 @@
 var msg = document.getElementById('msg');
 var score_lbl = document.getElementById('score');
 
-var border_img = 'blacksquare.png';
-var head_img = 'greensquare.png';
-var head_img1 = 'greensquare.png';
-var head_img2 = 'greensquare.png';
-var apple_img = 'redsquare.png';
+var border_color = 'black';
+var snek_color = 'limegreen';
+var apple_color = 'red';
+
+function getRGB(num){
+    return '#00' + num.toString(16) + '00';
+}
 
 // table generation -- dun dun duuunnnn
 var tbl = document.getElementById('table');
@@ -16,15 +18,14 @@ for (var i = 0; i < height; i++) {
     var tr = document.createElement('tr');
     for (var j = 0; j < width; j++) {
             var td = document.createElement('td');
-            var img = new Image(32,32);
-            img.setAttribute("id", j+","+i);
+            var div = document.createElement('div');
+            div.setAttribute("id", j+","+i);
+            div.style.width = "32px";
+            div.style.height = "32px";
             if(i == 0 || j == 0 || i == height-1 || j == width-1){
-                img.src = border_img;
+                div.style.backgroundColor = border_color;
             }
-            else{
-                img.src = 'blanksquare.png';
-            }
-            td.appendChild(img)
+            td.appendChild(div)
             tr.appendChild(td)
     }
     tbdy.appendChild(tr);
@@ -32,13 +33,11 @@ for (var i = 0; i < height; i++) {
 tbl.appendChild(tbdy);
 
 document.getElementById('resetButton').onclick = reset;
-document.getElementById('classicButton').onclick = set_classic;
-document.getElementById('facesButton').onclick = set_faces;
 
 // define some variables
 var apple_start = '15,9';
 var apple = apple_start; 
-document.getElementById(apple).src = apple_img;
+document.getElementById(apple).style.backgroundColor = apple_color;
 var grow = false;
 var move_queue = ['E'];
 var gameover = true;
@@ -55,14 +54,9 @@ function Snek() {
       this.dir = 'E';
       var start = 6;
       this.trail = [3+start+',9', 2+start+',9', 1+start+',9', start+',9'];
-      for (var i = 1; i < this.trail.length; i++) {
-          document.getElementById(this.trail[i]).src = 'greensquare.png';
-      };
-      document.getElementById(this.trail[0]).src = head_img;
+      this.setSnekColors();
     }
     add(dir){
-      if(dir == 'W') head_img = head_img2;
-      if(dir == 'E') head_img = head_img1;
       this.dir = dir;
       var head = this.trail[0].split(',');
       var ahead = '';
@@ -92,17 +86,25 @@ function Snek() {
           ate = true;
       }
       if(ate == true){
-          document.getElementById(apple).src = apple_img;
+          document.getElementById(apple).style.backgroundColor = apple_color;
           score++;
+          this.length++;
           grow = true;
           score_lbl.innerHTML = 'Score: ' + score;
       }
-      document.getElementById(this.trail[0]).src = 'greensquare.png';
       this.trail.unshift(ahead);
-      document.getElementById(ahead).src = head_img;
+      this.setSnekColors();
     }
     remove(){
-      document.getElementById(this.trail.pop()).src = 'blanksquare.png';
+      document.getElementById(this.trail.pop()).style.backgroundColor = null;
+    }
+    setSnekColors(){
+        const colorRange = 255-20;
+        const colorDelta = colorRange/this.length;
+        for (const idx in this.trail){
+            const id = this.trail[idx];
+            document.getElementById(id).style.backgroundColor = getRGB(Math.floor(255-colorDelta*idx));
+        }
     }
   }
 
@@ -125,46 +127,10 @@ function move(){
     }
 }
 
-function set_classic(){
-    border_img = 'blacksquare.png';
-    head_img = 'greensquare.png';
-    head_img1 = 'greensquare.png';
-    head_img2 = 'greensquare.png';
-    apple_img = 'redsquare.png';
-    document.getElementById(apple).src = apple_img;
-    document.getElementById(s.trail[0]).src = head_img;
-    for (var i = 0; i < height; i++) {
-        document.getElementById('0,'+i).src = border_img;
-        document.getElementById((width-1)+','+i).src = border_img;
-    }
-    for (var j = 0; j < width; j++) {
-        document.getElementById(j+',0').src = border_img;
-        document.getElementById(j+','+(height-1)).src = border_img;
-    }
-}
-
-function set_faces(){
-    border_img = 'ali.png';
-    head_img = 'arsala_right.png';
-    head_img1 = 'arsala_right.png';
-    head_img2 = 'arsala_left.png';
-    apple_img = 'santi.png';
-    document.getElementById(apple).src = apple_img;
-    document.getElementById(s.trail[0]).src = head_img;
-    for (var i = 0; i < height; i++) {
-        document.getElementById('0,'+i).src = border_img;
-        document.getElementById((width-1)+','+i).src = border_img;
-    }
-    for (var j = 0; j < width; j++) {
-        document.getElementById(j+',0').src = border_img;
-        document.getElementById(j+','+(height-1)).src = border_img;
-    }
-}
-
 function reset(){
     for (var i = 1; i < height-1; i++) {
         for (var j = 1; j < width-1; j++) {
-            document.getElementById(j+','+i).src = 'blanksquare.png';
+            document.getElementById(j+','+i).style.backgroundColor = null;
         }
     }
     s = new Snek();
@@ -172,7 +138,7 @@ function reset(){
     grow = false;
     gameover = false;
     apple = apple_start;
-    document.getElementById(apple).src = apple_img;
+    document.getElementById(apple).style.backgroundColor = apple_color;
     score = 0;
     msg.innerHTML = '';
     score_lbl.innerHTML = 'Score: 0';

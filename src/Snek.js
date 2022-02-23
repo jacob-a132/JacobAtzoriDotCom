@@ -19,12 +19,6 @@ const Snek = (props) =>  {
       </div>
 
       <table className="center" id={'table'} style={{ 'backgroundColor':' blue' }}></table>
-      {props.isBasic ?
-        <div>
-          <button id="classicButton" type="button" >classic</button>
-          <button id="facesButton" type="button" >faces</button>
-        </div> : <div />
-      }
 
       { props.isBasic ? UseScript('/snek-basic.js') : UseScript('/snek-ai.js') }
     </div>

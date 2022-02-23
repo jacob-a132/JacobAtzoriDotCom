@@ -11,6 +11,8 @@ import About from './About';
 import Time from './Time';
 import Snek from './Snek';
 import RoomLayout from './RoomLayout/src/App';
+import Collision from './Collision/src/App';
+// import Mastermind from './Mastermind';
 
 class App extends Component {
   render() {
@@ -26,6 +28,8 @@ class App extends Component {
             <Route path="/snek" component={() => <Snek isBasic />} />
             <Route path="/snek-ai" component={Snek} />
             <Route path="/room-layout" component={RoomLayout} />
+            <Route path="/collision-detection" component={Collision} />
+            {/* <Route path="/picas-y-fijas" component={Mastermind} /> */}
           </Switch>
         </div>
       </div>

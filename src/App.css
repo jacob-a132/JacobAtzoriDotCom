@@ -93,7 +93,7 @@ img {
 }
 
 .Name {
-  font: 500 italic 30px/50px 'Ubuntu', sans-serif;
+  font: 500 30px/50px 'Ubuntu', sans-serif;
   /* color: #283149; */
   color: #ec2d2d;
 }
@@ -115,7 +115,7 @@ img {
 }
 
 .PageTitle {
-  font: 500 italic 20px/30px 'Ubuntu',serif;
+  font: 500 20px/30px 'Ubuntu',serif;
   text-align: left;
   color: #ee7575;
 }
@@ -273,4 +273,20 @@ img {
 .TimeLabel {
   font-weight: bold;
   margin-right: 10px;
+}
+
+.paf {
+  color: white;
+}
+
+.paf-number {
+  width: 80px;
+}
+
+.paf-secret {
+  background-color: lightgrey;
+  color: #000;
+  width: auto;
+  font-size: larger;
+  font-weight: bold;
 }
